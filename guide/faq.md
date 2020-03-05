@@ -473,4 +473,6 @@ springboot 2.2.0 之前无此问题, springboot 2.2.0 出现此问题
 
 解决方案：1.将springboot降级到2.1.x或升级到2.2.1起 (建议springboot2.2.2)
 
-
+自动生成代码连接sqlserver 报错
+连接到mysql库时可以生成代码，但是连接到sqlserver 数据库时报错“java.sql.SQLException: 列名 'TABLE_NAME' 无效。”  
+com.baomidou.mybatisplus.generator.config.builder.ConfigBuilder.class中480行的sql变量值为：select cast(so.name as varchar(500)) as TABLE_NAME, cast(sep.value as varchar(500)) as COMMENTS from sysobjects so left JOIN sys.extended_properties sep on sep.major_id=so.id and sep.minor_id=0 where (xtype='U' or xtype='v') AND TABLE_NAME IN ('test')
